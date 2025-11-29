@@ -28,17 +28,23 @@ function NoteDetail() {
   };
 
   return (
-    <main style={{maxWidth:800,margin:'0 auto',padding:'32px 0'}}>
-      <div style={{maxWidth:700,margin:'0 auto',padding:0}}>
-  <h1 className="page-title" style={{marginBottom:8}}>{note.title}</h1>
-        <div style={{color:'var(--on-background-grey)',fontSize:14,marginBottom:24}}>{showFormattedDate(note.createdAt)}</div>
-        <div style={{fontSize:18,lineHeight:1.7,marginBottom:32,whiteSpace:'pre-wrap',color:'var(--on-background)'}}>{note.body}</div>
-        <div style={{display:'flex',gap:12}}>
-          <button onClick={handleDelete} style={{background:'var(--error)',color:'#fff',border:'none',padding:'10px 24px',borderRadius:8,fontWeight:'bold',cursor:'pointer'}}>Hapus</button>
+    <main className="page-content">
+      <div className="content-wrapper">
+        <h1 className="page-title">{note.title}</h1>
+        <div className="note-detail__meta">{showFormattedDate(note.createdAt)}</div>
+        <div className="note-detail__body">{note.body}</div>
+        <div className="note-detail__actions">
+          <button onClick={handleDelete} className="btn btn--danger">
+            Hapus
+          </button>
           {note.archived ? (
-            <button onClick={handleUnarchive} style={{background:'var(--primary)',color:'#fff',border:'none',padding:'10px 24px',borderRadius:8,fontWeight:'bold',cursor:'pointer'}}>Batal Arsip</button>
+            <button onClick={handleUnarchive} className="btn btn--primary">
+              Batal Arsip
+            </button>
           ) : (
-            <button onClick={handleArchive} style={{background:'var(--primary)',color:'#fff',border:'none',padding:'10px 24px',borderRadius:8,fontWeight:'bold',cursor:'pointer'}}>Arsipkan</button>
+            <button onClick={handleArchive} className="btn btn--secondary">
+              Arsipkan
+            </button>
           )}
         </div>
       </div>

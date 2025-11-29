@@ -44,7 +44,7 @@ let notes = [
 ];
 
 function getAllNotes() {
-  return notes;
+  return notes.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 }
 
 function getNote(id) {
@@ -54,18 +54,23 @@ function getNote(id) {
 
 function getActiveNotes() {
   const activeNotes = notes.filter((note) => !note.archived);
-  return activeNotes;
+  return activeNotes.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 }
 
 function getArchivedNotes() {
   const archivedNotes = notes.filter((note) => note.archived);
-  return archivedNotes;
+  return archivedNotes.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 }
 
 function addNote({ title, body }) {
-  notes = [...notes, {
-    id: `notes-${+new Date()}`, title: title || '(untitled)', body, createdAt: new Date().toISOString(), archived: false,
-  }];
+  const newNote = {
+    id: `notes-${+new Date()}`, 
+    title: title || '(untitled)', 
+    body, 
+    createdAt: new Date().toISOString(), 
+    archived: false,
+  };
+  notes = [newNote, ...notes];
 }
 
 function deleteNote(id) {

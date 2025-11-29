@@ -8,4 +8,11 @@ const showFormattedDate = (date) => {
   return new Date(date).toLocaleDateString('id-ID', options);
 };
 
-export { showFormattedDate };
+// Tambahan utility functions
+const getInitialData = () => {
+  // Ini untuk compatibility dengan komponen dari repository lain
+  // yang mungkin menggunakan fungsi ini
+  return [];
+};
+
+export { showFormattedDate, getInitialData };
