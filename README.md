@@ -1,70 +1,172 @@
-# Getting Started with Create React App
+# 📝 Personal Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplikasi catatan pribadi yang modern dan minimalis, dibangun dengan React dan Vite. Terinspirasi dari desain Notion dengan fitur-fitur lengkap untuk mengelola catatan Anda.
 
-## Available Scripts
+## ✨ Fitur
 
-In the project directory, you can run:
+### 🌙 **Dark/Light Mode**
+- Toggle tema dengan satu klik
+- Persistent theme dengan localStorage
+- Auto-detection system preference
 
-### `npm start`
+### 🔍 **Enhanced Search**
+- Real-time search filtering
+- Search dengan tombol clear (X)
+- Search counter yang informatif
+- Tersedia di halaman aktif dan arsip
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ✏️ **Smart Note Input**
+- Character limit indicator untuk judul (50 karakter)
+- Visual warning system (normal → warning → danger)
+- Form validation yang responsive
+- Auto-focus dan keyboard shortcuts
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📱 **Responsive Design**
+- Mobile-first approach
+- Consistent UI/UX di semua device
+- Touch-friendly interface
+- Optimized untuk tablet dan desktop
 
-### `npm test`
+### 🗂️ **Complete Note Management**
+- **CRUD Operations**: Create, Read, Update, Delete
+- **Archive System**: Arsipkan catatan tanpa menghapus
+- **Auto-sorting**: Catatan terbaru selalu di atas
+- **Multi-page Navigation**: Halaman terpisah untuk setiap fungsi
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Tech Stack
 
-### `npm run build`
+- **Frontend**: React 18 + Vite
+- **Routing**: React Router DOM v7
+- **Styling**: Pure CSS dengan CSS Variables
+- **State Management**: React Hooks (useState, useEffect)
+- **Build Tool**: Vite
+- **Package Manager**: npm
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/arezyhs/dicoding-react-personal-notes-app.git
+   cd dicoding-react-personal-notes-app
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. **Run development server**
+   ```bash
+   npm run dev
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. **Preview production build**
+   ```bash
+   npm run preview
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🏗️ Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/
+├── components/           # Reusable components
+│   ├── NoteInput.jsx    # Form input dengan character limit
+│   └── NoteSearch.jsx   # Search dengan clear button
+├── hooks/               # Custom React hooks
+│   └── useTheme.js      # Theme management hook
+├── pages/               # Page components
+│   ├── AddNote.jsx      # Halaman tambah catatan
+│   ├── ArchivedNotesList.jsx  # Halaman daftar arsip
+│   ├── NoteDetail.jsx   # Halaman detail catatan
+│   ├── NotesList.jsx    # Halaman daftar catatan aktif
+│   └── NotFound.jsx     # 404 page
+├── styles/
+│   └── style.css        # Global styles dengan CSS variables
+├── utils/
+│   ├── index.js         # Utility functions
+│   └── local-data.js    # Data management functions
+├── App.jsx              # Main app component
+└── index.jsx            # App entry point
+```
 
-## Learn More
+## 🎨 Design System
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **Color Palette**
+- **Light Mode**: Clean whites dan soft grays
+- **Dark Mode**: Deep blacks dan subtle grays
+- **Accent Colors**: Purposeful colors untuk actions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Typography**
+- **Page Titles**: 24px, font-weight 600
+- **Note Titles**: 18px, font-weight 600  
+- **Body Text**: 15px-16px, line-height 1.5-1.7
+- **Meta Text**: 12px-14px, muted colors
 
-### Code Splitting
+### **Components**
+- **Buttons**: Consistent `.btn` class dengan variants
+- **Cards**: Hover effects dengan subtle shadows
+- **Forms**: Clean inputs dengan focus states
+- **Navigation**: Minimalist dengan active states
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🔧 Available Scripts
 
-### Analyzing the Bundle Size
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📱 Pages & Routes
 
-### Making a Progressive Web App
+- `/` - **Catatan Aktif**: Daftar semua catatan aktif
+- `/archived` - **Arsip**: Daftar catatan yang diarsipkan
+- `/notes/new` - **Tambah Catatan**: Form untuk membuat catatan baru
+- `/notes/:id` - **Detail Catatan**: View detail dan edit catatan
+- `*` - **404 Page**: Halaman tidak ditemukan
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🎯 Key Features Detail
 
-### Advanced Configuration
+### **Note Management**
+- ✅ Tambah catatan baru dengan validasi
+- ✅ Edit catatan existing (via detail page)
+- ✅ Hapus catatan dengan konfirmasi
+- ✅ Arsip/unarsip catatan
+- ✅ Auto-save dengan localStorage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### **Search & Filter**
+- ✅ Real-time search di judul catatan
+- ✅ Case-insensitive search
+- ✅ Search hasil counter
+- ✅ Clear search dengan tombol X
 
-### Deployment
+### **UI/UX Enhancements**
+- ✅ Consistent spacing dan typography
+- ✅ Smooth transitions dan animations
+- ✅ Loading states dan empty states
+- ✅ Accessible color contrast
+- ✅ Keyboard navigation support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌟 Highlights
 
-### `npm run build` fails to minify
+- **Modern React**: Menggunakan functional components dan hooks
+- **Performance**: Fast builds dengan Vite
+- **Accessibility**: WCAG compliant colors dan navigation
+- **SEO Ready**: Proper HTML semantics
+- **Mobile Optimized**: Touch gestures dan responsive design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 👨‍💻 Author
+
+**Akbar Setiyawan (arezyhs)**
+- GitHub: [@arezyhs](https://github.com/arezyhs)
+- Project: [dicoding-react-personal-notes-app](https://github.com/arezyhs/dicoding-react-personal-notes-app)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+**Built with ❤️ using React + Vite**
